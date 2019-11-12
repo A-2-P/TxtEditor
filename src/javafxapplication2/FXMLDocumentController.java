@@ -55,11 +55,20 @@ public class FXMLDocumentController implements Initializable {
     }
     
     public void sucheRueckwaerts(String sucheNach, int sucheAb){
+        
         int start = textAreaEingabe.getText().lastIndexOf(sucheNach,sucheAb);
         if(start>-1){
             textAreaEingabe.selectRange(start ,start+sucheNach.length());
             System.out.println(start); 
         }  
+        
+        //String text = textAreaEingabe.getText();
+        //start = textAreaEingabe.getSelection().getStart() -1;
+        //start = text.lastIndexOf(sucheNach,start); 
+        
+        //if (start != -1) {
+        //    textAreaEingabe.selectRange(start, start + sucheNach.length());
+        //}
     }
     //Ähnlich wie der Konstruktor - 4init
     @Override
