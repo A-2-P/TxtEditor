@@ -6,6 +6,7 @@
 package javafxapplication2;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,17 +54,12 @@ public class FXMLDocumentController implements Initializable {
         
     }
     
-    public void sucheRueckwaerts(String str, int pos){
-        int j[];
-        for (int index = 0; index < -1; index++) {
-            //int j[index] = textAreaEingabe.getText().indexOf(str,pos);
-        }
-        
-        int i = textAreaEingabe.getText().indexOf(str,pos);
-        if(i>-1){
-            textAreaEingabe.selectRange(i ,i+str.length());
-        }
-        
+    public void sucheRueckwaerts(String sucheNach, int sucheAb){
+        int start = textAreaEingabe.getText().lastIndexOf(sucheNach,sucheAb);
+        if(start>-1){
+            textAreaEingabe.selectRange(start ,start+sucheNach.length());
+            System.out.println(start); 
+        }  
     }
     //Ähnlich wie der Konstruktor - 4init
     @Override
