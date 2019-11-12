@@ -48,7 +48,7 @@ public class FXMLDocumentController implements Initializable {
         int start = textAreaEingabe.getText().indexOf(sucheNach,sucheAb);
         if(start>-1){
             textAreaEingabe.selectRange(start ,start+sucheNach.length());
-            System.out.println(sucheAb);
+            System.out.println(sucheAb); 
         }
         
     }
