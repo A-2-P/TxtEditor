@@ -21,64 +21,38 @@ import javafx.scene.control.TextArea;
  */
 public class FXMLDocumentController implements Initializable {
 
-   @FXML
-    private Label staticLabel;
-    @FXML
-    private Button forewardBtn;
+    //@FXML
+    //public Label staticLabel;
+    //@FXML
+    //public Button forewardBtn;
     @FXML
     private TextArea textFieldSuche;
-    @FXML
-    private Button backBtn;
+    //@FXML
+    //public Button backBtn;
     @FXML
     private TextArea textAreaEingabe;
-    
-    
+    private Textbearbeitung textbearbeitung;
+
     @FXML
-    private void handleSucheVorwaerts(ActionEvent event) {
-        sucheVorwaerts(textFieldSuche.getText(), textAreaEingabe.getCaretPosition());
+    public void handleSucheVorwaerts(ActionEvent event) {
+        textbearbeitung.sucheVorwaerts(textFieldSuche.getText(), textAreaEingabe.getCaretPosition());
     }
 
     @FXML
-    private void handleSucheRueckwaerts(ActionEvent event) {
-        sucheRueckwaerts(textFieldSuche.getText(), textAreaEingabe.getCaretPosition());
+    public void handleSucheRueckwaerts(ActionEvent event) {
+        textbearbeitung.sucheRueckwaerts(textFieldSuche.getText(), textAreaEingabe.getCaretPosition());
+    } 
 
-    }
-    
-    public void sucheVorwaerts(String sucheNach, int sucheAb){
-             
-        int start = textAreaEingabe.getText().indexOf(sucheNach,sucheAb);
-        if(start>-1){
-            textAreaEingabe.selectRange(start ,start+sucheNach.length());
-            System.out.println(sucheAb); 
-        }
-        
-    }
-    
-    public void sucheRueckwaerts(String sucheNach, int sucheAb){
-        
-        int start = textAreaEingabe.getText().lastIndexOf(sucheNach,sucheAb);
-        if(start>-1){
-            textAreaEingabe.selectRange(start ,start+sucheNach.length());
-            System.out.println(start); 
-        }  
-        
-        //String text = textAreaEingabe.getText();
-        //start = textAreaEingabe.getSelection().getStart() -1;
-        //start = text.lastIndexOf(sucheNach,start); 
-        
-        //if (start != -1) {
-        //    textAreaEingabe.selectRange(start, start + sucheNach.length());
-        //}
-    }
     //Ähnlich wie der Konstruktor - 4init
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        textbearbeitung = new Textbearbeitung(textAreaEingabe);
         textAreaEingabe.setText("Halli Hallo Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \nsed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et \nea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut \nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo \ndolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+        //textbearbeitung = new Textbearbeitung(textAreaEingabe);
+        //textbearbeitung.fuelleTextArea();
         //textFieldSuche.setText("Hallo");
         //int i = textAreaEingabe.getCaretPosition();
         //System.out.println(i);
         //textAreaEingabe.selectRange(5,10);
     }
-    
-   
 }
