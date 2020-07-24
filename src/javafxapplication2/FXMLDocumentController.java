@@ -43,11 +43,10 @@ public class FXMLDocumentController implements Initializable {
         textbearbeitung.sucheRueckwaerts(textFieldSuche.getText(), textAreaEingabe.getCaretPosition());
     } 
 
-    //Ähnlich wie der Konstruktor - 4init
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         textbearbeitung = new Textbearbeitung(textAreaEingabe);
-        textAreaEingabe.setText("Halli Hallo Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \nsed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et \nea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut \nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo \ndolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
+        textAreaEingabe.setText("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, \nsed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \nAt vero eos et accusam et justo duo dolores et \nea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut \nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo \ndolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.");
         //textbearbeitung = new Textbearbeitung(textAreaEingabe);
         //textbearbeitung.fuelleTextArea();
         //textFieldSuche.setText("Hallo");
